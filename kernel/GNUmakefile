@@ -106,7 +106,7 @@ override LDFLAGS += \
     -static \
     -z max-page-size=0x1000 \
     --gc-sections \
-    -T linker-scripts/x86_64.lds
+    -T linker-scripts/x86-64.lds
 
 # Use "find" to glob all *.c, *.S, and *.asm files in the tree and obtain the
 # object and header dependency file names.
@@ -125,7 +125,7 @@ all: bin/$(OUTPUT)
 -include $(HEADER_DEPS)
 
 # Link rules for the final executable.
-bin/$(OUTPUT): GNUmakefile linker-scripts/x86_64.lds $(OBJ)
+bin/$(OUTPUT): GNUmakefile linker-scripts/x86-64.lds $(OBJ)
 	mkdir -p "$(dir $@)"
 	$(LD) $(LDFLAGS) $(OBJ) -o $@
 

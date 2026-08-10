@@ -65,6 +65,7 @@ limine-binary/limine:
 		LIBS="$(HOST_LIBS)"
 
 kernel/.deps-obtained:
+	chmod +x ./kernel/get-deps
 	./kernel/get-deps
 
 .PHONY: kernel
